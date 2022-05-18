@@ -1,2 +1,7 @@
 #environments
 venv 
+*.idea
+*.mypy_cache
+***.sqlite3
+***.csv
+**__pycache__
