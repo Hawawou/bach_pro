@@ -1,6 +1,7 @@
 from tweepy.streaming import Stream
 import tweepy as tw
 from tweepy import Stream
+from bachelor_project.settings import env
 
 class TweetListener(tw.Stream):
 
@@ -11,10 +12,10 @@ class TweetListener(tw.Stream):
     def on_error(sel, status):
         print(status)
 
-access_token = "1247811144942682112-LAWA6x3iemoa40nxu2tQakXeK1HNzp"
-access_token_secret = "vslVzHNQWs961DEIK3PRHEizejvylMCWqAUy3BaqvlSiZ"
-consumer_key = "YQwfghS2GZePhmy1LRaKu1JT4"
-consumer_secret = "tCnZskF26CBKg2a6NSrciZFDgActEpumP4fPmpbY7FxJDs8nZo"
+access_token = env('TWEET_ACCESS_TOKEN')
+access_token_secret = env('TWEET_ACCESS_TOKEN_SECRET')
+consumer_key = env('TWEET_CONSUMER_KEY')
+consumer_secret = env('TWEET_CONSUMER_SECRET')
 
 if __name__ == "__main__":
     # auth = TweetListener(
