@@ -1,0 +1,25 @@
+{% comment %} {%extends 'base.html'%} {% endcomment %}
+ {% load socialaccount %}
+
+ {%block content%}
+    <h1> Data-requester </h1> <br>
+
+    {% load static %}
+
+    {%if user.is_authenticated %}
+       <p> Hi {{ user.username }} </p> <br>
+
+       <a href="{% url 'account_logout' %}" class="btn btn-danger">Logout</a>
+
+    {% else %}
+      <button class="btn-class">
+
+         <a href = "{% provider_login_url "twitter" %}"> Signup with your twitter account</a>
+         <link rel="stylesheet" href="{% static 'main.css' %}" >
+      </button>
+    {% endif %}
+
+ {% endblock %}
+
+
+ 
